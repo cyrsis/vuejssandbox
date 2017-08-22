@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="growler">
+  <br/>
+  <div class="container">
+    <div class="logo">
+      <img v-bind:src="applogo" alt="facebook logo" style="height: 36px">
+      <!--long hair sytnx for v-bind-->
+      <img :src="applogo" alt="facebook logo" style="height: 36px">
+      <!--Short hand syntac for v-bind-->
+    </div>
+    <div v-for="beer in beers">
+      <div>
+        <h5>{{ beer.name }}</h5>
+        <small style="color:gray">abv: {{ beer.abv }}</small>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var growler = new Vue({
+    el: '#growler',
+    data: {
+      applogo:'static/logo.png',
+      beers: [
+        {name: 'Ahool Ale', abv: 5.4},
+        {name: 'Sigbin Stout', abv: 8.1}
+      ]
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="growler">
+  <br/>
+  <div class="container">
+     <h2
+       v-text="appName"
+       v-bind:style="appStyle">
+
+     </h2>
+    <h2
+      v-text="appName"
+      v-bind:style="[accentColor,headers]">
+      <!--using Bindin from Array, can be handy but still in trouble,-->
+      <!--Css in Seperate file works better-->
+
+    </h2>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var growler = new Vue({
+    el: '#growler',
+    data: {
+      appName:'VBinding with CSS in appStyle data',
+      <!--data:{}-->
+      appStyle:{
+        color: '#FF6A00',
+        fontFamily: 'Verdana',
+        margin:0
+      },
+
+      accentColor: {
+        color: '#35ff1f'
+      },
+
+      headers: {
+        fontFamily: 'Verdana',
+        margin: 0
+      },
+      <!--}-->
+      beers: [
+        {name: 'Ahool Ale', abv: 5.4},
+        {name: 'Sigbin Stout', abv: 8.1}
+      ]
+    }
+  });
+</script>
+</body>
+</html>
