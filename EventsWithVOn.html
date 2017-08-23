@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+
+<div id="growler">
+  <form class="form-horizontal">
+    <p>
+      This example shows the <code>v-on</code> shorthand syntax (<code>@</code>) in use.
+    </p>
+
+    <div class="form-group">
+      <div class="input-group">
+        <input v-model.trim="query" type="search" class="form-control" placeholder="please enter your query here.">
+        <button v-on:click="executeNewSearch" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <!--Pass in with which button-->
+
+    <div class="form-group">
+      <p>Pass in with Alert function with which button</p>
+      <div class="input-group">
+        <input v-model.trim="query" type="search" class="form-control" placeholder="please enter your query here.">
+        <button v-on:click="executeNewSearchAlert" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <p>Pass in with Token as Parms function, pass event handler as parms are reserve for the $event </p>
+      <div class="input-group">
+        <input v-model.trim="query" type="search" class="form-control" placeholder="please enter your query here.">
+        <button v-on:click="executeNewSearchToken('token',$event)" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p>Pass in as Bunch of thing to show the Json side of the Passing into function </p>
+      <div class="input-group">
+        <input v-model.trim="query" type="search" class="form-control" placeholder="please enter your query here.">
+        <button v-on:click="executeNewSearchJsonStyle({str:'token', num:12345, d: new Date()},$event)" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var growler = new Vue({
+    el: '#growler',
+    data: {
+      query:''
+    },
+    methods: {
+      executeNewSearch: function() {
+        alert(this.query);
+      },
+      executeNewSearchAlert: function () {
+
+        alert("Query is "+this.query+" Button is "+event.target.innerText + " button" )
+      },
+      executeNewSearchToken: function (v,e) {
+
+        alert("Value is "+ v+ " Query is "+this.query+" Button is "+e.target.innerText + " button" )
+      },
+      executeNewSearchJsonStyle: function (v,e) {
+
+        var j = JSON.stringify(v);
+
+         var msg = 'Value: '+ j + '\n'+
+                  'Query: '+ this.query+' \n'+
+                  'Button: '+ e.target.innerText;
+         alert(msg)
+
+      }
+
+    }
+  });
+</script>
+</body>
+</html>

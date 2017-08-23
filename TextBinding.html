@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body>
+<div>
 
 <div id="growler">
   <br/>
@@ -16,6 +16,20 @@
     <input v-model="query" placeholder="Searching">
   </div>
   <div>Searching for :{{ query }}</div>
+  <div class="container">
+    <p>This show how to use <code>V-model as lazy binding </code> for text binding </p>
+    <p>Benefit can be great, because I can chain this up</p>
+    <input v-model.lazy.trim="lazyquery" placeholder="Searching">
+  </div>
+  <div>Searching for :{{ lazyquery }}</div>
+
+  <div class="LazyNumber">
+  <p>This show how to use <code>V-model as lazy binding with Number </code> for text binding </p>
+  <p>Benefit can be great, because I can chain this up</p>
+  <input v-model.lazy.trim.number="lazyqueryNumber" placeholder="Searching">
+</div>
+<div>Searching for :{{ lazyqueryNumber }}</div>
+</div>
 </div>
 
 
@@ -24,7 +38,9 @@
   var growler = new Vue({
     el: '#growler',
     data: {
-      query: ''
+      query: '',
+      lazyquery:'',
+      lazyqueryNumber:''
     }
   });
 </script>

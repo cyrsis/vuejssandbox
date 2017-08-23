@@ -66,7 +66,7 @@ Binding Text
  -- Using Filter
 <div>{{ result.ibu |removePeriods|toUpperCase}} </div>
 
-#Computed properties (For more compelex transformation)
+# Computed properties (For more compelex transformation)
 # Compare those three things
 
 |                                | Filter | Computed Properties | Methods  | Watchers |
