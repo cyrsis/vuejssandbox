@@ -2,6 +2,7 @@
 
 > A Vue.js Sandbox project
 
+> Reference From https://github.com/ecofic/course-vue-getting-started/tree/master/src
 ## Install Chrome Dev tools
 
 Install vue-devtools
@@ -40,8 +41,16 @@ Note:Use  Primitive values for Props:
 
 Note: Do not use ES6 synntax
 
-# Binding
+# 1- Binding for Display
 Binding Text
 1. Semantic syntax -> {{}} -> Doesnt work too well
 2. Declarative syntax ->v-???? -> Much better to work with 
 3.  One-time bindings -> use it as speed performance
+
+# 2- Way binding for collect data in View
+1. V-model sound good
+   Text fields
+      input, textarea
+   CheckBox
+   Radio Button
+   Drop Down lists
