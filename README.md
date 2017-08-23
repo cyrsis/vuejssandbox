@@ -54,3 +54,33 @@ Binding Text
    CheckBox
    Radio Button
    Drop Down lists
+
+## Something new in Vue
+# Watches
+  Ideal for async operation
+  
+# Filter (easier to read)
+(Great way to handle BASIC text element)
+ -- Using Methods
+<div> {{ toUpperCase(removePeriods(result.ibu))}} </div>
+ -- Using Filter
+<div>{{ result.ibu |removePeriods|toUpperCase}} </div>
+
+#Computed properties (For more compelex transformation)
+# Compare those three things
+
+|                                | Filter | Computed Properties | Methods  | Watchers |
+|--------------------------------|--------|---------------------|----------|----------|
+| React to data changes          | Yes    | Yes                 | No       | Yes      |
+| Resuable across apps           | Yes    | No                  | No       | No       |
+| Cached based on dependencies   | No     | Yes                 | No       | No       |
+| Apprpriate for async operation | No     | No                  | Yes      | Yes      |
+| Accepts Parameters             | Yes    | No                  | Yes      | No       |
+| Fires After creation           | Yes    | Yes                 | Possible | No       |
+## To do Soon
+Axios 
+Components
+Transitions
+Routing
+Statment management 
+Server-Side Rendering

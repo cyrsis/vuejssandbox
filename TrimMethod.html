@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+
+<div id="app">
+    <p>
+      An example of the <code>trim</code> modifier.
+      The leading and trailing "|" is used to show that a trim is happening
+    </p>
+    <div class="form-group">
+      <label for="searchInputField" class="form-label">search</label>
+      <input v-model.trim="query" placeholder="Search..." id="searchInputField" type="search" class="form-control">
+
+      <!-- The leading and trailing "|" is used to show that a trim is happening -->
+      <small class="text-muted"><b>|</b>{{ query }}<b>|</b></small>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var growler = new Vue({
+    el: '#app',
+    data: {
+      query:''
+    }
+  });
+</script>
+</body>
+</html>

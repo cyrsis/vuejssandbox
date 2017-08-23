@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+<div id="App">
+  <br/>
+  <form>
+    <p>
+      An example of the <code>number</code> modifier.
+      The leading and trailing "|" is used to show that a trim is happening
+    </p>
+    <div class="form-group">
+      <label for="resultInputField" class="form-label">What is two plus three?</label>
+      <input v-model.number="result" placeholder="2+3=" id="resultInputField" class="form-control">
+      <small class="text-muted">{{ result }}<br />{{ resultType }}</small>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var App = new Vue({
+    el: '#App',
+    data: {
+      result: null,
+      resultType: ''
+    },
+    watch:{
+      result: function (val) {
+        var t = typeof this.result;
+        this.resultType=t;
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
