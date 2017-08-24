@@ -124,3 +124,14 @@ Or HTML5 history Mode
   }
 }
 ```
+
+## Firebase with Vue
+npm install firebase vuefire --save
+
+Add in main.js 
+
+import VueFire from 'vuefire'
+
+Vue.use(VueFire)
+
+
