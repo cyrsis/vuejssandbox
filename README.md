@@ -77,6 +77,11 @@ Binding Text
 | Apprpriate for async operation | No     | No                  | Yes      | Yes      |
 | Accepts Parameters             | Yes    | No                  | Yes      | No       |
 | Fires After creation           | Yes    | Yes                 | Possible | No       |
+## Working with Events
+Bubble Up (Parent -> Grand Parent) Microsoft idea again , most common
+Capture Down (Grand Parent -> Parent) -> Maybe with 3rd party component 
+
+
 ## To do Soon
 Axios 
 Components

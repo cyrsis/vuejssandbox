@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="`">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="growler">
+  <form class="form-horizontal">
+    <p>
+      This example mixes the <code>capture</code> modifier with the default event propagation approach.
+    <p>Bubble Up</p>
+    <p>Capture Down</p>
+      <code> vm-on:click.capture </code>
+    </p>
+
+    <div v-on:click="grandparentClick">
+      <div class="form-group" v-on:click="parentClick">
+        <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <br />
+    <div class="form-group">
+      <label for="logTextarea">Event Log</label>
+      <textarea class="form-control" v-model="history" rows="4"></textarea>
+    </div>
+  </form>
+</div>
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var growler = new Vue({
+    el: '#growler',
+    data: {
+          query: '',
+          history:''
+    },
+    methods: {
+      executeSearch: function () {
+//        alert("Makiing executeSerach!!");
+        this.history+= 'Search button click\n';
+      },
+      parentClick: function () {
+//        alert("Parent executeSerach!!");
+        this.history += 'Parent click\n';
+      },
+      grandparentClick:function () {
+        this.history += 'Search button grandparent click\n';
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
