@@ -89,3 +89,38 @@ Transitions
 Routing
 Statment management 
 Server-Side Rendering
+
+##Deployment
+
+#Firebase
+npm install -g firebase-tools
+
+Cd Root dir
+npm run build
+
+#Update the project (thats it)
+npm run build
+firebase deploy 
+
+firebase.json
+``` bash
+{
+  "hosting": {
+    "public": "./dist"
+  }
+}
+```
+Or HTML5 history Mode
+``` bash 
+{
+  "hosting": {
+    "public": "./dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
